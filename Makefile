@@ -1,9 +1,11 @@
 CXX = g++
 
+TOR_DIR 	= $(shell pwd)
 
-SRC = $(shell find ./ -name *.cpp)
 
 TAR = myRtspServer
 
+
+
 all:
-	$(CXX) -o $(TAR) $(SRC)
+	$(CXX) -o $(TAR) main.cpp rtp.cpp
