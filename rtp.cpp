@@ -1,13 +1,14 @@
 /*
- * ×÷Õß£º_JT_
- * ²©¿Í£ºhttps://blog.csdn.net/weixin_42462202
+ * ???_JT_
+ * ???https://blog.csdn.net/weixin_42462202
  */
- 
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 
 #include "rtp.h"
 
@@ -26,7 +27,7 @@ void rtpHeaderInit(struct RtpPacket* rtpPacket, uint8_t csrcLen, uint8_t extensi
     rtpPacket->rtpHeader.ssrc = ssrc;
 }
 
-int rtpSendPacket(int socket, char* ip, int16_t port, struct RtpPacket* rtpPacket, uint32_t dataSize)
+int rtpSendPacket(int socket, const char* ip, int16_t port, struct RtpPacket* rtpPacket, uint32_t dataSize)
 {
     struct sockaddr_in addr;
     int ret;
