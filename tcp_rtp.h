@@ -55,6 +55,7 @@ struct RtpHeader
 
 struct RtpPacket
 {
+    char header[4];
     struct RtpHeader rtpHeader;
     uint8_t payload[0];
 };
@@ -62,6 +63,6 @@ struct RtpPacket
 void rtpHeaderInit(struct RtpPacket* rtpPacket, uint8_t csrcLen, uint8_t extension,
                     uint8_t padding, uint8_t version, uint8_t payloadType, uint8_t marker,
                    uint16_t seq, uint32_t timestamp, uint32_t ssrc);
-int rtpSendPacket(int socket, const char* ip, int16_t port, struct RtpPacket* rtpPacket, uint32_t dataSize);
+int rtpSendPacket(int socket, uint8_t rtpChannel, struct RtpPacket* rtpPacket, uint32_t dataSize);
 
 #endif //_RTP_H_

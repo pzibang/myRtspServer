@@ -8,4 +8,4 @@ TAR = myRtspServer
 
 
 all:
-	$(CXX) -o $(TAR) main.cpp rtp.cpp
+	$(CXX) -o $(TAR) main.cpp tcp_rtp.cpp
